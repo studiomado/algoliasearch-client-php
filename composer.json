@@ -19,8 +19,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3",
-        "ext-mbstring": "*"
+        "php": ">=5.3"
     },
     "require-dev": {
         "satooshi/php-coveralls": "0.6.*",

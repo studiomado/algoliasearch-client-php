@@ -56,7 +56,7 @@ class Version
     {
         $prefix = $segment.' ('.$version.'); ';
 
-        if (false === mb_strpos(self::getUserAgent(), $prefix)) {
+        if (false === MbStringAdapter::getStrPosFromString(self::getUserAgent(), $prefix)) {
             self::$prefixUserAgentSegments = $prefix . self::$prefixUserAgentSegments;
         }
     }
@@ -65,7 +65,7 @@ class Version
     {
         $suffix = '; '.$segment.' ('.$version.')';
 
-        if (false === mb_strpos(self::getUserAgent(), $suffix)) {
+        if (false === MbStringAdapter::getStrPosFromString(self::getUserAgent(), $suffix)) {
             self::$suffixUserAgentSegments .= $suffix;
         }
     }

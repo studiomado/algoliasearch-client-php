@@ -115,11 +115,12 @@ class ClientContext
 
         $this->rotateHosts();
 
-        if ($this->applicationID == null || mb_strlen($this->applicationID) == 0) {
+
+        if ($this->applicationID == null || MbStringAdapter::getStrlenFromString($this->applicationID) == 0) {
             throw new Exception('AlgoliaSearch requires an applicationID.');
         }
 
-        if ($this->apiKey == null || mb_strlen($this->apiKey) == 0) {
+        if ($this->apiKey == null || MbStringAdapter::getStrlenFromString($this->apiKey) == 0) {
             throw new Exception('AlgoliaSearch requires an apiKey.');
         }
 

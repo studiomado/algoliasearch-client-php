@@ -349,7 +349,7 @@ class Index
      */
     public function deleteObject($objectID)
     {
-        if ($objectID == null || mb_strlen($objectID) == 0) {
+        if ($objectID == null || MbStringAdapter::getStrlenFromString($objectID) == 0) {
             throw new \Exception('objectID is mandatory');
         }
 
@@ -640,7 +640,7 @@ class Index
         for ($i = 0; $i < count($filters); $i++) {
             if (is_array($filters[$i])) {
                 foreach ($filters[$i] as $filter) {
-                    if (mb_substr($filter, 0, mb_strlen($needle)) === $needle) {
+                    if (MbStringAdapter::getSubstrFromString($filter, 0, MbStringAdapter::getStrlenFromString($needle)) === $needle) {
                         unset($filters[$i]);
                         $filters = array_values($filters);
                         $i--;
@@ -648,7 +648,7 @@ class Index
                     }
                 }
             } else {
-                if (mb_substr($filters[$i], 0, mb_strlen($needle)) === $needle) {
+                if (MbStringAdapter::getSubstrFromString($filters[$i], 0, MbStringAdapter::getStrlenFromString($needle)) === $needle) {
                     unset($filters[$i]);
                     $filters = array_values($filters);
                     $i--;
