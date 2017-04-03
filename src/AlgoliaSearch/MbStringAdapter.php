@@ -13,7 +13,7 @@ class MbStringAdapter
      */
     public static function getStrlenFromString($str)
     {
-        if (extension_loaded(EXTENSION)) {
+        if (extension_loaded(self::EXTENSION)) {
             return mb_strlen($str);
         }
         
@@ -28,7 +28,7 @@ class MbStringAdapter
      */
     public static function getStrposFromString($haystack, $needle)
     {	
-        if (extension_loaded(EXTENSION)) {
+        if (extension_loaded(self::EXTENSION)) {
             return mb_strpos($haystack, $needle);
         }
         
@@ -44,7 +44,7 @@ class MbStringAdapter
      */
     public static function getSubstrFromString($str, $start, $length)
     {
-    	if (extension_loaded(EXTENSION)) {
+    	if (extension_loaded(self::EXTENSION)) {
             return mb_substr($str, $start, $length);
         }
         
